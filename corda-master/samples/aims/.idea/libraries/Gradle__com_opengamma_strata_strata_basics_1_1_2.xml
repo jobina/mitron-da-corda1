@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.opengamma.strata:strata-basics:1.1.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.opengamma.strata/strata-basics/1.1.2/d4a3dd835466ac8acdd15c2d67b17f0e3f07c890/strata-basics-1.1.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.opengamma.strata/strata-basics/1.1.2/a74c3f5346437649adf4e111e16fbe7728472290/strata-basics-1.1.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

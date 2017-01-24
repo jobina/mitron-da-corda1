@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.opengamma.strata:strata-collect:1.1.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.opengamma.strata/strata-collect/1.1.2/9d3610d971b692f78dd82b103c1be8ff47e736eb/strata-collect-1.1.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.opengamma.strata/strata-collect/1.1.2/c24a50c0432f1f4fa2765100f83069672776a136/strata-collect-1.1.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

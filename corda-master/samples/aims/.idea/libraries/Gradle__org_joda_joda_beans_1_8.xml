@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.joda:joda-beans:1.8">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.joda/joda-beans/1.8/9632c7a92b84947564d58aee409d6629980542ee/joda-beans-1.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.joda/joda-beans/1.8/3979022a612f81e37f80afb9ee28a42d53496b50/joda-beans-1.8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
