@@ -10,6 +10,7 @@ import net.corda.vega.contracts.IRSState
 import net.corda.vega.contracts.PortfolioState
 import net.corda.vega.portfolio.Portfolio
 import java.time.LocalDate
+import java.util.concurrent.ThreadLocalRandom
 
 /**
  * API JSON generation functions for larger JSON outputs.
@@ -24,6 +25,12 @@ class PortfolioApiUtils(private val ownParty: Party) {
             val initialMargin: InitialMarginView,
             val confirmation: Map<String, Any>)
 
+
+    fun randomStatus():Boolean{
+        var randomNumber = ThreadLocalRandom.current().nextInt(0,10);
+        var result =randomNumber%7!=0;
+        return result
+    }
     fun createValuations(state: PortfolioState, portfolio: Portfolio): ValuationsView {
         val valuation = state.valuation!!
 
@@ -79,7 +86,7 @@ class PortfolioApiUtils(private val ownParty: Party) {
                         "credit" to 0.0,
                         "total" to valuation.margin.first
                 ),
-                agreed = false)
+                agreed = randomStatus())
 
         return ValuationsView(
                 businessDate = LocalDate.now(),
@@ -91,12 +98,12 @@ class PortfolioApiUtils(private val ownParty: Party) {
                         "equity" to 0,
                         "credit" to 0,
                         "total" to tradeCount,
-                        "agreed" to false
+                        "agreed" to randomStatus()
                 ),
                 marketData = mapOf(
                         "yieldCurves" to yieldCurves,
                         "fixings" to fixings,
-                        "agreed" to false
+                        "agreed" to randomStatus()
                 ),
                 sensitivities = mapOf("curves" to processedSensitivities,
                         "currency" to valuation.currencySensitivies.amounts.toList().map {
@@ -105,12 +112,12 @@ class PortfolioApiUtils(private val ownParty: Party) {
                                     "amount" to it.amount
                             )
                         },
-                        "agreed" to false
+                        "agreed" to randomStatus()
                 ),
                 initialMargin = initialMarginView,
                 confirmation = mapOf(
                         "hash" to state.hash().toString(),
-                        "agreed" to false
+                        "agreed" to randomStatus()
                 )
         )
     }
