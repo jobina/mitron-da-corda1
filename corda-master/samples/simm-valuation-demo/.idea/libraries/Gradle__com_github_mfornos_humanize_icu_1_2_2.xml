@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.mfornos:humanize-icu:1.2.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.mfornos/humanize-icu/1.2.2/137f4ad1667b310c62ae77c9a5248084b5fa808a/humanize-icu-1.2.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.mfornos/humanize-icu/1.2.2/a6de09c5e2bb1a5a8042eeac1b2e5d55b36685e/humanize-icu-1.2.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

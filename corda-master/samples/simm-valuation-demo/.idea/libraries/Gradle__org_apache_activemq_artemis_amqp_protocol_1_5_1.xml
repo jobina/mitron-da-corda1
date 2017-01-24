@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.activemq:artemis-amqp-protocol:1.5.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.activemq/artemis-amqp-protocol/1.5.1/f9d69d9aaf993517e5406a1e372159b50fbbda99/artemis-amqp-protocol-1.5.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.activemq/artemis-amqp-protocol/1.5.1/35d3442fadaaaf150a6245f90ddf4e97f40b5cb1/artemis-amqp-protocol-1.5.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
