@@ -79,7 +79,7 @@ $(document).ready(function(){
 
    $.ajax({
       type: "GET",
-      url: "/api/simmvaluationdemo/whoami",
+      url: "/api/aims/whoami",
       dataType: "json",
       success: function(resultData){
 
@@ -130,7 +130,7 @@ $(document).ready(function(){
                     		
                     		
                     	    $.ajax({
-        	                    url: "/api/simmvaluationdemo/"+clientVal+"/trades",
+        	                    url: "/api/aims/"+clientVal+"/trades",
         	                    dataType: "json",
         	                    contentType: 'application/json',
         	                    method:'GET'
@@ -153,7 +153,7 @@ $(document).ready(function(){
    $("#next").click(function(){
    
      var val = $("#client").val();
-     var putUrl = "/api/simmvaluationdemo/"+val+"/trades";
+     var putUrl = "/api/aims/"+val+"/trades";
 	       
      var tradeDate = $("#tradeDate").val();		   
 	 var convention = $("#convention").val();
@@ -246,7 +246,7 @@ function processOutput(response){
 
 function portfolioSummary(val) {
 
-    var url = "/api/simmvaluationdemo/"+val+"/portfolio/summary";
+    var url = "/api/aims/"+val+"/portfolio/summary";
     $.ajax({
          type: "GET",
          url: url,
@@ -258,7 +258,7 @@ function portfolioSummary(val) {
 				$("#notionalAmt").text("Net Amount: "+notional);
          }
       });
-	  var aggregateUrl = "/api/simmvaluationdemo/"+val+"/portfolio/aggregated";
+	  var aggregateUrl = "/api/aims/"+val+"/portfolio/aggregated";
 	   $.ajax({
          type: "GET",
          url: aggregateUrl,
