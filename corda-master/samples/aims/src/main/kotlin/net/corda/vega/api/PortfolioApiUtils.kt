@@ -27,8 +27,8 @@ class PortfolioApiUtils(private val ownParty: Party) {
 
 
     fun randomStatus():Boolean{
-        var randomNumber = ThreadLocalRandom.current().nextInt(0,10);
-        var result =randomNumber%7!=0;
+        var randomNumber = ThreadLocalRandom.current().nextInt(1,100);
+        var result =randomNumber%23!=0;
         return result
     }
     fun createValuations(state: PortfolioState, portfolio: Portfolio): ValuationsView {
