@@ -3,33 +3,33 @@ $(document).ready(function(){
 
    $("#createTrade").addClass("displayNone");
   // $("#portfolioSummary").addClass("displayNone");
-   
-   $('#ps').click(function() {	
+
+   $('#ps').click(function() {
 
 	$('#ps').parent().addClass("active");
 	$('#ts').parent().removeClass("active");
 	$('#validationMenu').parent().removeClass("active");
-	
+
 	$("#createTrade").addClass("displayNone");
     $("#portfolioSummary").removeClass("displayNone");
-	
+
   $("#summaryColumns").jsGrid('loadData');
   });
-  
-    $('#ts').click(function() {	
+
+    $('#ts').click(function() {
 
 	$('#ts').parent().addClass("active");
 	$('#ps').parent().removeClass("active");
 	$('#validationMenu').parent().removeClass("active");
-	
+
 	$("#createTrade").removeClass("displayNone");
     $("#portfolioSummary").addClass("displayNone");
 
   });
 
-  
+
   $("#client").on('change', function() {
-		   $("#summaryColumns").jsGrid('loadData');	
+		   $("#summaryColumns").jsGrid('loadData');
 	   });
 /*var response = {
  fixedLeg : {
@@ -79,7 +79,7 @@ $(document).ready(function(){
 
    $.ajax({
       type: "GET",
-      url: "/api/simmvaluationdemo/whoami",
+      url: "/api/aims/whoami",
       dataType: "json",
       success: function(resultData){
 
@@ -95,14 +95,14 @@ $(document).ready(function(){
 		   $('#client').selectpicker('refresh');
       }
    });
-   
-   
+
+
    $("#tradeConfirm").click(function(){
-   
+
        confirmation(fixedResponse);
    });
-   
-   
+
+
    $("#summaryColumns").jsGrid({
         width: "100%",
         height: "300px",
@@ -119,7 +119,7 @@ $(document).ready(function(){
 			{ name: "notional", type: "text", title: "Notional"},
 			{ name: "im", type: "text", title: "IM Contribution",width:150},
 			{ name: "mtm", type: "text", title: "PV"},
-			{ name: "marginedText", type: "text", title: "Included in summary"},            
+			{ name: "marginedText", type: "text", title: "Included in summary"},
         ],
 		controller: {
                     loadData: function() {
@@ -127,21 +127,21 @@ $(document).ready(function(){
                     	var clientVal = $('#client option:selected').val();
 
                     	if(clientVal!==undefined) {
-                    		
-                    		
+
+
                     	    $.ajax({
-        	                    url: "/api/simmvaluationdemo/"+clientVal+"/trades",
+        	                    url: "/api/aims/"+clientVal+"/trades",
         	                    dataType: "json",
         	                    contentType: 'application/json',
         	                    method:'GET'
         	                }).done(function(response) {
-        	                	
+
         	                	/*$("#invoicedetailContainer").LoadingOverlay("hide");
         	                	$("#invoicedetailContainer1").LoadingOverlay("hide");*/
 								d.resolve(response);
 								portfolioSummary(clientVal);
         	                });
-        	                
+
 
                     	}
                         return d.promise();
@@ -149,24 +149,24 @@ $(document).ready(function(){
                     }
                 }
     });
-   
+
    $("#next").click(function(){
-   
+
      var val = $("#client").val();
-     var putUrl = "/api/simmvaluationdemo/"+val+"/trades";
-	       
-     var tradeDate = $("#tradeDate").val();		   
+     var putUrl = "/api/aims/"+val+"/trades";
+
+     var tradeDate = $("#tradeDate").val();
 	 var convention = $("#convention").val();
-	 var effectiveDate = $("#effectiveDate").val();	
+	 var effectiveDate = $("#effectiveDate").val();
 
-	 var terminationDate = $("#terminationDate").val();	
-	 var description = $("#description").val();	
-	 var notional = $("#notional").val();	
+	 var terminationDate = $("#terminationDate").val();
+	 var description = $("#description").val();
+	 var notional = $("#notional").val();
 
-	 var buySell = $("#buySell").val();	
-	 var id =  Math.floor(Math.random()*89999+10000);;	
-	 var fixedRate = 0.015;	 
-	 
+	 var buySell = $("#buySell").val();
+	 var id =  Math.floor(Math.random()*89999+10000);;
+	 var fixedRate = 0.015;
+
 	 var trade = {
 	     buySell:buySell,
 		 id:id,
@@ -178,7 +178,7 @@ $(document).ready(function(){
 		 startDate:effectiveDate,
 		 tradeDate:tradeDate
 	 };
-	 
+
 	 console.log(trade);
 		 $.ajax({
 		  type: "PUT",
@@ -193,13 +193,13 @@ $(document).ready(function(){
 		    console.log(data);
 		  }
 		});
-   
+
      });
 });
 
 
 function fixedLeg(id,url) {
-  
+
   var getUrl = url+"/"+id;
    $.ajax({
       type: "GET",
@@ -213,24 +213,24 @@ function fixedLeg(id,url) {
 }
 
 function confirmation(response) {
-  
+
   $("#confirmationPanelBody").empty();
   $("#confirmationPanelBody").append()
-  
+
    var statusRow = "<tr><td>Status</td><td>Confirmed</td></tr>";
     var tradeId = statusRow+"<tr><td>Trade ID</td><td></td></tr>";
 	  var valuationD = tradeId+"<tr><td>Valuation Date</td><td>"+response['valuationDate']+"</td></tr>";
     var legalDocs = valuationD+"<tr><td>Legal Document Hash</td><td>"+response['hashLegalDocs']+"</td></tr>";
-  
+
   var obj = $("<table id= 'confirmTable' class='table table-striped'>"+
    "<tbody id='tbodyConfirmation'>"+legalDocs+"</tbody>");
   obj.appendTo("#confirmationPanelBody");
-  
+
 
 }
 
 function processOutput(response){
-   
+
    var fixedLeg = response['fixedLeg'];
    var floatingLeg = response['floatingLeg'];
    var tbody = $("#outputTable").find("tbody");
@@ -246,7 +246,7 @@ function processOutput(response){
 
 function portfolioSummary(val) {
 
-    var url = "/api/simmvaluationdemo/"+val+"/portfolio/summary";
+    var url = "/api/aims/"+val+"/portfolio/summary";
     $.ajax({
          type: "GET",
          url: url,
@@ -258,7 +258,7 @@ function portfolioSummary(val) {
 				$("#notionalAmt").text("Net Amount: "+notional);
          }
       });
-	  var aggregateUrl = "/api/simmvaluationdemo/"+val+"/portfolio/aggregated";
+	  var aggregateUrl = "/api/aims/"+val+"/portfolio/aggregated";
 	   $.ajax({
          type: "GET",
          url: aggregateUrl,
