@@ -1,0 +1,145 @@
+.navbar-default {
+    background-color: #2D4563;
+	  
+
+}
+.navbar-nav>li>a{
+  color:#C0C0C0 !important;
+}
+
+.navbar-nav>li>a:hover {
+  color:white !important;
+}
+
+.displayNone {
+   display:none;
+}
+
+#toolbar {
+ margin-top : 5px;
+ height: 50px;
+ background-color:#dee1e5;
+ 
+}
+
+.summarize {
+ 
+ background-color:#31C3E7;
+  border-radius: 15px;
+ color:white;
+  border-color :white;
+  border-style: solid;
+  border-width: 5px;
+margin-bottom:10px;
+}
+
+#approvalSpan {
+
+  float:right;
+  padding-left:5px;
+  margin-top:-25px;
+}
+
+#createTrade {
+  
+  border-color :white;
+  border-style: solid;
+  border-width: 5px;
+}
+
+#form {
+ padding-top:30px;
+ padding-right:10px;
+}
+
+#tradeBooking {
+  background-color:#dee1e5;
+  padding-top:20px;
+}
+
+
+.navbar-brand {
+color:white !important;
+}
+
+
+#resultBox {
+  border-left-color :white;
+  border-left-color: solid;
+  border-left-color: 10px;
+ # background-color:#dee1e5;
+  padding-top:20px;
+}
+
+#fixedLeg>table,td,tr {
+   border: 1px solid #dee1e5;
+   
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+  padding:5px;
+
+}
+
+.panel-body{
+  padding:0px
+}
+
+#confirmationPanel {
+  margin-top:20px;
+}
+
+.navbar {
+  background-color: #337ab7 !important;
+  border-color: #258ecd !important;
+  margin-bottom: 5px;
+}
+.navbar .navbar-brand {
+  color: #ecf0f1;
+}
+.navbar .navbar-brand:hover,
+.navbar .navbar-brand:focus {
+  color: white;
+}
+.navbar .navbar-text {
+  color: #ecf0f1;
+}
+.navbar .navbar-nav > li > a {
+  color: #ecf0f1;
+}
+.navbar .navbar-nav > li > a:hover,
+.navbar .navbar-nav > li > a:focus {
+  color: white;
+}
+.navbar .navbar-nav > .active > a,
+.navbar .navbar-nav > .active > a:hover,
+.navbar .navbar-nav > .active > a:focus {
+  color: #FFFFFF;
+  background-color: #31C3E7;
+}
+.navbar .navbar-nav > .open > a,
+.navbar .navbar-nav > .open > a:hover,
+.navbar .navbar-nav > .open > a:focus {
+  color: #FFFFFF;
+  background-color: #258ecd;
+}
+.navbar .navbar-toggle {
+  border-color: #258ecd;
+}
+.navbar .navbar-toggle:hover,
+.navbar .navbar-toggle:focus {
+  background-color: #258ecd;
+}
+.navbar .navbar-toggle .icon-bar {
+  background-color: #ecf0f1;
+}
+.navbar .navbar-collapse,
+.navbar .navbar-form {
+  border-color: #ecf0f1;
+}
+.navbar .navbar-link {
+  color: #ecf0f1;
+}
+.navbar .navbar-link:hover {
+  color: #31C3E7;
+}
